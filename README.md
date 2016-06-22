@@ -2,9 +2,21 @@
 Mobile app for MyMICDS
 
 ## Initial Setup
+
+### Ionic
 In order to work with the Ionic platform, you must first install Cordova and Ionic. Type this into the command line:
 ```
 $ npm install -g cordova ionic
+```
+
+### Scss
+We also use Sass to stylings, which can be found under the /scss directory. If you modify this file, you must run:
+```
+$ gulp sass
+```
+This will compile the Sass into regular CSS. You may need to install Gulp first if it doesn't work:
+```
+$ npm install gulp -g
 ```
 
 ## Testing
