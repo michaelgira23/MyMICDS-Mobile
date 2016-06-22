@@ -5,3 +5,8 @@ In order to work with the Ionic platform, you must first install Cordova and Ion
 ```
 $ npm install -g cordova ionic
 ```
+
+You can buid iOS and Android versions of the app, but for previewing the web browser you can type in:
+```
+$ ionic serve
+```
