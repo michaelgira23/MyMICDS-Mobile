@@ -1,5 +1,7 @@
 // http://ionicframework.com/docs/v2/theming/
 
+// Add Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 
 // App Shared Imports
 // --------------------------------------------------
@@ -10,3 +12,9 @@
 @import "../pages/hello-ionic/hello-ionic";
 
 @import "../pages/item-details/item-details";
+
+@import "../pages/login/login";
+
+* {
+	font-family: 'Open Sans', sans-serif;
+}
