@@ -1,28 +1,66 @@
 $blue: #29ABE2;
 $white: #eee;
 
-.login {
+.login > scroll-content {
+	height: 100%;
 	background: $blue;
 
-	display: flex;
-	flex-direction: column;
+	display: flex !important;
 	justify-content: center;
 	align-items: center;
 
-	.header {
-		color: $white;
-	}
+	.center-form {
+		width: calc(100% - 4rem);
+		max-width: 36rem;
 
-	.subheader {
-		color: $white;
-	}
+		.header {
 
-	ion-list {
+			.logo {
+				display: block;;
+				margin: 0 auto;
+				width: 12rem;
+				height: 12rem;
+			}
 
-		ion-item {
-			border: none !important;
-			background: darken($blue, 10%);
-			color: $white;
+			.title {
+				margin: 0;
+				color: $white;
+
+				text-align: center;
+				font-size: 3rem;
+				font-weight: 300;
+			}
+
+			.subtitle {
+				margin-top: 0;
+				color: $white;
+				text-align: center;
+			}
+		}
+
+		form {
+			margin: 0 auto;
+			text-align: center;
+
+			ion-list {
+				margin: 0;
+
+				ion-item {
+					padding: 0 1rem;
+					background: darken($blue, 10%);
+					color: $white;
+					border: none !important;
+
+					.item-inner {
+						padding: 0;
+
+						ion-label {
+							margin-right: 0;
+							color: $white;
+						}
+					}
+				}
+			}
 		}
 	}
 }
