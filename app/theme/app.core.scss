@@ -3,6 +3,10 @@
 // Add Google Fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
 
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
 // App Shared Imports
 // --------------------------------------------------
 // These are the imports which make up the design of this app.
@@ -14,7 +18,3 @@
 @import "../pages/item-details/item-details";
 
 @import "../pages/login/login";
-
-* {
-	font-family: 'Open Sans', sans-serif;
-}

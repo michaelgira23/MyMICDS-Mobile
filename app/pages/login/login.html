@@ -1,8 +1,26 @@
 <ion-content class="login">
 
-  <h1>MyMICDS Mobile</h1>
-  <p>
-	Login
-  </p>
+  <h1 class="header">MyMICDS Mobile</h1>
+  <p class="subheader">Login</p>
+
+  <form padding [ngFormModel]="loginForm" (submit)="login($event)">
+    <ion-list>
+
+      <ion-item>
+          <ion-label stacked>Username</ion-label>
+          <ion-input type="text" ngControl="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input type="password" ngControl="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button block type="submit" [disabled]="!loginForm.valid">Login</button>
+      </ion-item>
+
+    </ion-list>
+  </form>
 
 </ion-content>

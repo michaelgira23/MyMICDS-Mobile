@@ -1,3 +1,28 @@
+$blue: #29ABE2;
+$white: #eee;
+
 .login {
-	background: #29ABE2;
+	background: $blue;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.header {
+		color: $white;
+	}
+
+	.subheader {
+		color: $white;
+	}
+
+	ion-list {
+
+		ion-item {
+			border: none !important;
+			background: darken($blue, 10%);
+			color: $white;
+		}
+	}
 }
