@@ -33,7 +33,14 @@
 
         <ion-item class="item-grade">
           <ion-label>I am a teacher</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox ngControl="teacher"></ion-checkbox>
+        </ion-item>
+
+        <ion-item class="item-grade">
+          <ion-label>Graduation Year</ion-label>
+          <ion-select ngControl="gradYear">
+            <ion-option *ngFor="let year of gradeRange" [value]="year">{{year}}</ion-option>
+          </ion-select>
         </ion-item>
 
         <ion-item class="item-register">
