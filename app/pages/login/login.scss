@@ -13,7 +13,12 @@ $white: #eee;
 		width: calc(100% - 4rem);
 		max-width: 36rem;
 
+		margin-top: auto;
+		margin-bottom: auto;
+
 		.header {
+			display: block;
+			margin-bottom: 1rem;
 
 			.logo {
 				display: block;;
@@ -32,13 +37,13 @@ $white: #eee;
 			}
 
 			.subtitle {
-				margin-top: 0;
+				margin: 0;
 				color: $white;
 				text-align: center;
 			}
 		}
 
-		form {
+		.loginForm {
 			margin: 0 auto;
 			text-align: center;
 
@@ -51,12 +56,24 @@ $white: #eee;
 					color: $white;
 					border: none !important;
 
+					ion-label {
+						color: darken($white, 20%);
+					}
+				}
+
+				.item-username {
+					.micds-prefix {
+						position: absolute;
+						right: 0;
+						bottom: 0;
+					}
+				}
+
+				.item-login {
 					.item-inner {
 						padding: 0;
-
 						ion-label {
 							margin-right: 0;
-							color: $white;
 						}
 					}
 				}
