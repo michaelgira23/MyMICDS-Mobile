@@ -1,0 +1,50 @@
+<ion-content class="register">
+  <div class="center-form">
+
+    <div class="header">
+      <img class="logo" src="img/logo.svg">
+      <h1 class="title">MyMICDS Mobile</h1>
+      <p class="subtitle">Register</p>
+    </div>
+
+    <form class="registerForm" [ngFormModel]="registerForm" (submit)="register($event)">
+      <ion-list>
+
+        <ion-item class="item-username">
+            <ion-label stacked>Username</ion-label>
+            <ion-label class="micds-prefix">@micds.org</ion-label>
+            <ion-input type="text" ngControl="username"></ion-input>
+        </ion-item>
+
+        <ion-item class="item-password">
+          <ion-label stacked>Password</ion-label>
+          <ion-input type="password" ngControl="password"></ion-input>
+        </ion-item>
+
+        <ion-item class="item-firstName">
+          <ion-label stacked>First Name</ion-label>
+          <ion-input type="text" ngControl="firstName"></ion-input>
+        </ion-item>
+
+        <ion-item class="item-lastName">
+          <ion-label stacked>Last Name</ion-label>
+          <ion-input type="text" ngControl="lastName"></ion-input>
+        </ion-item>
+
+        <ion-item class="item-grade">
+          <ion-label>I am a teacher</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+
+        <ion-item class="item-register">
+          <button block large dark class="submitRegister" type="submit" [disabled]="!registerForm.valid">Register</button>
+        </ion-item>
+
+      </ion-list>
+
+      <button clear secondary class="skip-register">Register Later</button>
+
+    </form>
+
+  </div>
+</ion-content>
