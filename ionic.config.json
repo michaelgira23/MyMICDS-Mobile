@@ -1,6 +1,6 @@
 {
-  "name": "MyMICDS-Mobile",
-  "app_id": "8fe60d2f",
-  "v2": true,
-  "typescript": true
+  "name": "ionic2-app-base",
+  "app_id": "",
+  "typescript": true,
+  "v2": true
 }
