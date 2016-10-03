@@ -31,7 +31,12 @@ export class MyApp {
 		this.platform.ready().then(() => {
 			// Okay, so the platform is ready and our plugins are available.
 			// Here you can do any higher level native things you might need.
-			StatusBar.styleLightContent();
+			StatusBar.styleDefault();
+
+			// rgb(41,171,226)
+			// rgba(0, 0, 0, 0.6)
+			// rgb(16, 68, 90)
+			// #10445A
 		});
 	}
 

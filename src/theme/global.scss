@@ -11,6 +11,26 @@
 //
 // App Shared Sass variables belong in app.variables.scss.
 
+ion-menu ion-content .scroll-content {
+	background: rgba(0, 0, 0, 0.8);
+
+	ion-list .item {
+		background: none;
+
+		&:first-child {
+			border-top: none;
+		}
+
+		&:last-child {
+			border-color: darken(#29ABE2, 15%);
+		}
+
+		.item-inner {
+			border-color: darken(#29ABE2, 15%);
+		}
+	}
+}
+
 ion-header ion-navbar {
 	button .button-inner {
 		color: $text-color;
