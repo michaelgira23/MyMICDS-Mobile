@@ -1,7 +1,7 @@
 /* tslint:disable:max-line-length */
 
 import { Directive, ElementRef, OnInit, OnDestroy } from '@angular/core';
-import { BackgroundService } from '../services/background.service';
+import { BackgroundService } from '../providers/background';
 
 @Directive({
 	selector: '[mymicds-blur]' // tslint:disable-line

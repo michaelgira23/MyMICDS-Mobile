@@ -1,0 +1,56 @@
+@import '../../../theme/variables';
+
+.day-navigation {
+	margin-bottom: 0.5rem;
+	display: flex;
+
+	.previous-day,
+	.current-day,
+	.next-day {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.25rem;
+
+		background: none;
+		border: none;
+		color: $text-color;
+
+		&:hover {
+			color: darken($text-color, 20%);
+		}
+		&:active {
+			color: darken($text-color, 40%);
+		}
+	}
+
+	.previous-day,
+	.next-day {
+		font-weight: 300;
+
+		fa {
+			margin: 0 0.5rem;
+		}
+	}
+
+	.current-day {
+		display: flex;
+		flex-direction: column;
+
+		font-weight: 600;
+		border-left: 1px solid rgba($text-color, 0.5);
+		border-right: 1px solid rgba($text-color, 0.5);
+	}
+}
+
+.table {
+	margin: 0;
+
+	thead {
+		.start,
+		.end {
+			width: 6rem;
+		}
+	}
+}

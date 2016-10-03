@@ -3,7 +3,9 @@ import * as environment from '../common/config';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-const io = require('socket.io-client');
+// const io = require('socket.io-client');
+// Temporary
+declare let io;
 
 @Injectable()
 export class SocketioService {

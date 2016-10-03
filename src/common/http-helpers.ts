@@ -10,7 +10,7 @@ export function xhrHeaders() {
 }
 
 // Generate error to display to user
-export function handleError(error: any) {
+export function handleError(error: any): any {
 
 	// Check if error is string
 	if (typeof error === 'string') {

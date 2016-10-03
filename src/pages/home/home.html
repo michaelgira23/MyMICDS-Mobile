@@ -8,5 +8,16 @@
 </ion-header>
 
 <ion-content padding>
-	<h3>Home page</h3>
+		<div *ngIf="announcement.length > 0 && showAnnouncement" class="announcement alert alert-info" [class.dismissed]="dismissAnnouncement" role="alert">
+			<button type="button" class="close" (click)="dismissAlert()" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+			<strong>Announcement</strong>
+			<span [innerHTML]="announcement"></span>
+		</div>
+		<div class="modules">
+			<!-- <mymicds-progress mymicds-blur [schedule]="schedule" [today]="current" class="module"></mymicds-progress>
+			<mymicds-schedule mymicds-blur [currentSchedule]="schedule" class="module half"></mymicds-schedule>
+			<mymicds-weather mymicds-blur class="module half"></mymicds-weather> -->
+		</div>
 </ion-content>
