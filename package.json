@@ -1,7 +1,7 @@
 {
   "name": "mymicds-mobile",
   "author": "MyMICDS Development Team",
-  "homepage": "https://mymicds.net/",
+  "homepage": "https://mymicds.net",
 	"license": "MIT",
   "private": true,
   "scripts": {

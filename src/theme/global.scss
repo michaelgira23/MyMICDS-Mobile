@@ -2,7 +2,7 @@
 
 
 // Global CSS
-// -------------------------------------------------- 
+// --------------------------------------------------
 // Put CSS rules here that you want to apply globally.
 //
 // To declare rules for a specific mode, create a child rule
@@ -10,3 +10,17 @@
 // automatically applied to the <body> element in the app.
 //
 // App Shared Sass variables belong in app.variables.scss.
+
+ion-header ion-navbar {
+	button .button-inner {
+		color: $text-color;
+	}
+
+	.toolbar-background {
+		background: rgba(0, 0, 0, 0.6);
+	}
+
+	.toolbar-content ion-title .toolbar-title {
+		color: $text-color;
+	}
+}
