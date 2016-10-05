@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 // const io = require('socket.io-client');
 // Temporary
-declare let io;
+declare let io: any;
 
 @Injectable()
 export class SocketioService {
@@ -13,7 +13,7 @@ export class SocketioService {
 	private socket;
 
 	constructor() {
-		this.socket = io.connect(environment.backendURL);
+		// this.socket = io.connect(environment.backendURL);
 	}
 
 	// Listens to a specific event and convert the data stream into an observable

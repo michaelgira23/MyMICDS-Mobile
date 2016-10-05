@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
+import { Http } from '@angular/http';
 import { IonicApp, IonicModule } from 'ionic-angular';
+import { AuthHttp, AuthConfig, JwtHelper, AUTH_PROVIDERS } from 'angular2-jwt';
+let jwtHelper = new JwtHelper();
 
 import { MyApp } from './app.component';
 
@@ -75,17 +78,61 @@ import { WeatherIconPipe } from '../pipes/weather-icon';
 	providers: [
 		AlertService,
 		AliasService,
+		AuthService,
 		BackgroundService,
 		BulletinService,
 		CanvasService,
 		ClassesService,
 		LunchService,
 		PlannerService,
+		PortalService,
 		SocketioService,
 		SportsService,
 		StatsService,
 		UserService,
-		WeatherService
+		WeatherService,
+
+		// JWT
+		AUTH_PROVIDERS,
+		{
+			provide: AuthHttp,
+			useFactory: (http) => {
+				return new AuthHttp(new AuthConfig({
+					tokenGetter: () => {
+						// Look in session storage for id_token, but fallback to local storage
+						let session = sessionStorage.getItem('id_token');
+						let local = localStorage.getItem('id_token');
+
+						let token = session || local;
+
+						if (typeof token !== 'string') { return ''; }
+
+						// Remove any quotations from the sides
+						token = token.split('"').join('');
+
+						// Check validity of jwt token
+						if (token.split('.').length !== 3) {
+							localStorage.removeItem('id_token');
+							sessionStorage.removeItem('id_token');
+							return '';
+						}
+
+						// Check if token is expired. If it is, delete and send user to login page
+						if (jwtHelper.isTokenExpired(token)) {
+							sessionStorage.removeItem('id_token');
+							localStorage.removeItem('id_token');
+
+							this.router.navigate(['/login']);
+							return '';
+						}
+
+						return token;
+					},
+					noJwtError: true
+				}), http);
+			},
+			deps: [Http]
+		}
 	]
 })
 export class AppModule {}
