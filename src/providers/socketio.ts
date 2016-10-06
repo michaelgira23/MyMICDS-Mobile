@@ -3,9 +3,11 @@ import * as environment from '../common/config';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
+import * as io from 'socket.io-client';
+
 // const io = require('socket.io-client');
 // Temporary
-declare let io: any;
+// declare let io: any;
 
 @Injectable()
 export class SocketioService {
@@ -13,7 +15,7 @@ export class SocketioService {
 	private socket;
 
 	constructor() {
-		// this.socket = io.connect(environment.backendURL);
+		this.socket = io.connect(environment.backendURL);
 	}
 
 	// Listens to a specific event and convert the data stream into an observable

@@ -2,9 +2,13 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { hexToRgb } from '../../../common/utils';
 import moment from 'moment';
+import * as chartJS from 'chart.js';
+console.log(chartJS)
+let Chart = chartJS.default;
+
 import { SocketioService } from '../../../providers/socketio';
 
-declare let Chart: any;
+// declare let Chart: any;
 
 @Component({
 	selector: 'mymicds-progress',

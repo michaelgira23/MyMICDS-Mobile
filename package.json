@@ -5,6 +5,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "install": "typings install",
     "build": "ionic-app-scripts build",
     "watch": "ionic-app-scripts watch",
     "serve:before": "watch",

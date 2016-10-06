@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "chart.js": "registry:npm/chart.js#2.1.4+20160615174920"
+  },
+  "globalDependencies": {
+    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20160317120654"
+  }
+}
