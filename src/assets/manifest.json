@@ -1,6 +1,6 @@
 {
-	"name": "Ionic",
-	"short_name": "Ionic",
+	"name": "MyMICDS Mobile",
+	"short_name": "MyMICDS",
 	"start_url": "index.html",
 	"display": "standalone",
 	"icons": [{

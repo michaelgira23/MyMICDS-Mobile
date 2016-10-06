@@ -2,6 +2,11 @@
 // http://ionicframework.com/docs/v2/theming/
 @import "ionic.globals";
 
+$logo: (
+	blue:       #29ABE2,
+	green:      #009245,
+	dark-green: #006837
+);
 
 // Shared Variables
 // --------------------------------------------------
@@ -11,7 +16,7 @@
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
 $text-color:       #eee;
-$background-color: #29ABE2;
+$background-color: map-get($logo, blue);
 
 // $text-color:        #000;
 // $background-color:  #fff;
@@ -27,11 +32,11 @@ $background-color: #29ABE2;
 
 $colors: (
 	primary:   #0275d8,
-	secondary: #009245,
+	secondary: map-get($logo, green),
 	danger:    #d9534f,
 	light:     #5bc0de,
-	dark:      darken(#29ABE2, 15%),
-	favorite:  #006837
+	dark:      darken(map-get($logo, blue), 15%),
+	favorite:  map-get($logo, dark-green)
 );
 
 // $colors: (
@@ -52,7 +57,6 @@ $colors: (
 // default are overridden.
 
 @import "ionic.theme.default";
-@import "global";
 
 // Ionicons
 // --------------------------------------------------
