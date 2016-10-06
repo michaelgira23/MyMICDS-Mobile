@@ -10,6 +10,7 @@ import '../common/rxjs-operators';
 
 import { AuthService } from './auth';
 
+declare let document: any;
 declare let Trianglify: any;
 
 @Injectable()
@@ -26,7 +27,7 @@ export class BackgroundService {
 
 	constructor(private authHttp: AuthHttp, private authService: AuthService) { }
 
-	get() {
+	get(): Observable<any> {
 		let body = JSON.stringify({});
 		let headers = xhrHeaders();
 		let options = new RequestOptions({ headers });
@@ -54,7 +55,11 @@ export class BackgroundService {
 	}
 
 	set() {
-		document.body.style.backgroundImage = 'url("' + this.variants.normal + '")';
+		let contents = document.getElementsByTagName('ion-content');
+		console.log('change background for ' + contents.length);
+		for(let i = 0; i < contents.length; i++) {
+			contents[i].style.backgroundImage = 'url("' + this.variants.normal + '")';
+		}
 		this.backgroundChangeSource.next(this.variants.blur);
 	}
 

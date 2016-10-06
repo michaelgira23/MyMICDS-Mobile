@@ -5,6 +5,7 @@ import { StatusBar } from 'ionic-native';
 import { Home } from '../pages/home/home';
 import { Lunch } from '../pages/lunch/lunch';
 
+import { BackgroundService } from '../providers/background';
 
 @Component({
 	templateUrl: 'app.html'
@@ -16,7 +17,12 @@ export class MyApp {
 
 	pages: Array<{title: string, component: any}>;
 
-	constructor(public platform: Platform) {
+	backgrounds: any = {
+		normal: '',
+		blur: ''
+	};
+
+	constructor(public platform: Platform, private backgroundService: BackgroundService) {
 		this.initializeApp();
 
 		// used for an example of ngFor and navigation
@@ -24,6 +30,17 @@ export class MyApp {
 			{ title: 'Home', component: Home },
 			{ title: 'Lunch', component: Lunch }
 		];
+
+		// Get custom user background
+		this.backgroundService.get().subscribe(
+			data => {
+				console.log('get backgrounds', data);
+				this.backgrounds = data.variants;
+			},
+			error => {
+				// this.alertService.addAlert('danger', 'Get Background Error!', error);
+			}
+		);
 
 	}
 

@@ -2,9 +2,7 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { hexToRgb } from '../../../common/utils';
 import moment from 'moment';
-import * as chartJS from 'chart.js';
-console.log(chartJS)
-let Chart = chartJS.default;
+import { default as Chart } from 'chart.js'; // I know this line gives an error, but trust me, it works.
 
 import { SocketioService } from '../../../providers/socketio';
 

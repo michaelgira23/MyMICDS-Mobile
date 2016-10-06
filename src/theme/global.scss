@@ -11,6 +11,10 @@
 //
 // App Shared Sass variables belong in app.variables.scss.
 
+/*
+ * Navbar
+ */
+
 ion-menu ion-content .scroll-content {
 	background: rgba(0, 0, 0, 0.8);
 
@@ -43,4 +47,13 @@ ion-header ion-navbar {
 	.toolbar-content ion-title .toolbar-title {
 		color: $text-color;
 	}
+}
+
+/*
+ * Pages
+ */
+
+ion-content {
+	background-attachment: fixed;
+	background-size: cover;
 }
