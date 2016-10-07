@@ -12,6 +12,7 @@ import { Schedule } from '../pages/home/schedule/schedule';
 import { Weather } from '../pages/home/weather/weather';
 import { Lunch } from '../pages/lunch/lunch';
 
+import { BackgroundDirective } from '../directives/background';
 import { BlurDirective, DarkBlurDirective, WhiteBlurDirective } from '../directives/blur';
 
 import { AlertService } from '../providers/alert';
@@ -49,6 +50,7 @@ import { WeatherIconPipe } from '../pipes/weather-icon';
 		Lunch,
 
 		// Directives
+		BackgroundDirective,
 		BlurDirective,
 		DarkBlurDirective,
 		WhiteBlurDirective,

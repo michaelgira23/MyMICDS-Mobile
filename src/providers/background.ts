@@ -55,12 +55,7 @@ export class BackgroundService {
 	}
 
 	set() {
-		let contents = document.getElementsByTagName('ion-content');
-		console.log('change background for ' + contents.length);
-		for(let i = 0; i < contents.length; i++) {
-			contents[i].style.backgroundImage = 'url("' + this.variants.normal + '")';
-		}
-		this.backgroundChangeSource.next(this.variants.blur);
+		this.backgroundChangeSource.next(this.variants);
 	}
 
 	upload(file: File) {
