@@ -5,7 +5,7 @@ $blur-margin: 5px;
   Main Styles
 --------------------------- */
 
-page-home {
+mymicds-home {
 
 	.announcement.dismissed {
 		animation: deleteAlert 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -40,7 +40,7 @@ page-home {
 --------------------------- */
 
 @media screen and (min-width: 544px) {
-	page-home {
+	mymicds-home {
 		.modules {
 			.module {
 				 &.half {
