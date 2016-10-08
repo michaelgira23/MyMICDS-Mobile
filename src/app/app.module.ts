@@ -50,10 +50,10 @@ import { WeatherIconPipe } from '../pipes/weather-icon';
 		Lunch,
 
 		// Directives
-		BackgroundDirective,
-		BlurDirective,
-		DarkBlurDirective,
-		WhiteBlurDirective,
+		// BackgroundDirective,
+		// BlurDirective,
+		// DarkBlurDirective,
+		// WhiteBlurDirective,
 
 		// Pipes
 		CompassDirectionPipe,

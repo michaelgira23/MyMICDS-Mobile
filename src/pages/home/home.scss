@@ -1,10 +1,6 @@
 @import '../../theme/variables';
 $blur-margin: 5px;
 
-/* --------------------------
-  Main Styles
---------------------------- */
-
 mymicds-home {
 
 	.announcement.dismissed {
@@ -16,12 +12,31 @@ mymicds-home {
 		flex-wrap: wrap;
 		justify-content: space-between;
 
+		height: calc(100vh - 56px);
+		overflow-y: scroll;
+		scroll-snap-type: mandatory;
+		/* older spec implementation */
+		scroll-snap-destination: 100% 0%;
+		scroll-snap-points-y: repeat(100%);
+
 		.module {
+			height: 100%;
 			width: 100%;
 			margin-bottom: $blur-margin;
 			padding: 1rem;
 			color: $text-color;
 			overflow: hidden;
+
+			$module-colors: #5cb860, #39Add1, #e59a13, #e15258, #838cc7, #53bbb4, #eb7728, #20898c;
+			$color-count: length($module-colors);
+
+			@for $i from 1 through $color-count {
+				$color: nth($module-colors, $i);
+
+				&:nth-child(#{$color-count}n + #{$i}) {
+					background: $color;
+				}
+			}
 		}
 	}
 }
@@ -32,21 +47,5 @@ mymicds-home {
 	}
 	to {
 		opacity: 0;
-	}
-}
-
-/* --------------------------
-  Media Queries
---------------------------- */
-
-@media screen and (min-width: 544px) {
-	mymicds-home {
-		.modules {
-			.module {
-				 &.half {
-					width: calc(50% - #{$blur-margin / 2});
-				}
-			}
-		}
 	}
 }
