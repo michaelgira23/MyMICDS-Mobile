@@ -7,17 +7,31 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content mymicds-background>
+<!-- <ion-content mymicds-background>
 	<!-- <div *ngIf="announcement.length > 0 && showAnnouncement" class="announcement alert alert-info" [class.dismissed]="dismissAnnouncement" role="alert">
 		<button type="button" class="close" (click)="dismissAlert()" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		</button>
 		<strong>Announcement</strong>
 		<span [innerHTML]="announcement"></span>
-	</div> -->
+	</div> --
 	<div class="modules">
 		<mymicds-progress mymicds-blur [schedule]="schedule" [today]="current" class="module"></mymicds-progress>
 		<mymicds-schedule mymicds-blur [currentSchedule]="schedule" class="module"></mymicds-schedule>
 		<mymicds-weather mymicds-blur class="module"></mymicds-weather>
 	</div>
+</ion-content> -->
+
+<ion-content mymicds-background>
+	<ion-slides [options]="slideOptions">
+		<ion-slide>
+			<mymicds-progress class="module" [schedule]="schedule" [today]="current"></mymicds-progress>
+		</ion-slide>
+		<ion-slide>
+			<mymicds-schedule class="module" [currentSchedule]="schedule"></mymicds-schedule>
+		</ion-slide>
+		<ion-slide>
+			<mymicds-weather class="module"></mymicds-weather>
+		</ion-slide>
+	</ion-slides>
 </ion-content>

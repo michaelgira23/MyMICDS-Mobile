@@ -1,5 +1,4 @@
 @import '../../theme/variables';
-$blur-margin: 5px;
 
 mymicds-home {
 
@@ -7,36 +6,25 @@ mymicds-home {
 		animation: deleteAlert 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 	}
 
-	.modules {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
+	ion-slides ion-slide {
+		$module-colors: #5cb860, #39add1, #e59a13, #e15258, #838cc7, #53bbb4, #eb7728, #20898c;
+		$color-count: length($module-colors);
 
-		height: calc(100vh - 56px);
-		overflow-y: scroll;
-		scroll-snap-type: mandatory;
-		/* older spec implementation */
-		scroll-snap-destination: 100% 0%;
-		scroll-snap-points-y: repeat(100%);
+		@for $i from 1 through $color-count {
+			$color: nth($module-colors, $i);
+
+			&:nth-child(#{$color-count}n + #{$i}) {
+				background: $color;
+			}
+		}
 
 		.module {
-			height: 100%;
+			display: inline-block;
+			height: calc(100vh - 56px);
 			width: 100%;
-			margin-bottom: $blur-margin;
 			padding: 1rem;
 			color: $text-color;
 			overflow: hidden;
-
-			$module-colors: #5cb860, #39Add1, #e59a13, #e15258, #838cc7, #53bbb4, #eb7728, #20898c;
-			$color-count: length($module-colors);
-
-			@for $i from 1 through $color-count {
-				$color: nth($module-colors, $i);
-
-				&:nth-child(#{$color-count}n + #{$i}) {
-					background: $color;
-				}
-			}
 		}
 	}
 }

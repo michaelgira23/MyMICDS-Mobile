@@ -16,6 +16,11 @@ export class Home implements OnInit, OnDestroy {
 	dismissAnnouncement = false;
 	showAnnouncement = true;
 
+	// Options for slide navigation
+	slideOptions = {
+		direction: 'vertical'
+	};
+
 	timer: any;
 	current: any = new Date();
 	scheduleDate: any = new Date();

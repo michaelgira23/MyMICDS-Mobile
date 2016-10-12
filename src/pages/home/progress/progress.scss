@@ -5,6 +5,8 @@
 	display: flex;
 	justify-content: space-between;
 	.date {
+		text-align: left;
+
 		.date-full {
 			font-weight: 400;
 			font-size: 1.5rem;
@@ -18,6 +20,7 @@
 
 	.day {
 		text-align: right;
+
 		.time {
 			font-weight: 400;
 			font-size: 1.5rem;
