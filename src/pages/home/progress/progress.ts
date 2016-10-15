@@ -95,28 +95,28 @@ export class Progress implements OnInit, OnDestroy {
 		// Start timer
 		this.calculatePercentages();
 		this.timer = setInterval(() => {
-			this.calculatePercentages();
+			// this.calculatePercentages();
 		}, 1000);
 
 		// Socket.io service to spin the spinny
-		let tagEl = document.getElementById('progress-day-tag');
-		this.clickTagListener = Observable.merge(
-			Observable.fromEvent(tagEl, 'mousedown'),
-			Observable.fromEvent(tagEl, 'mouseup')
-		).debounceTime(100);
-		this.clickTagListenerSub = this.clickTagListener
-		.subscribe(
-			e => {
-				this.socketioService.emit('progress label click toggle', null);
-			}
-		);
-
-		this.socketioConnection = this.socketioService.listen('progress label spin').subscribe(
-			pressed => {
-				console.log('toggled');
-				pressed ? tagEl.classList.add('rotate') : tagEl.classList.remove('rotate');
-			}
-		);
+		// let tagEl = document.getElementById('progress-day-tag');
+		// this.clickTagListener = Observable.merge(
+		// 	Observable.fromEvent(tagEl, 'mousedown'),
+		// 	Observable.fromEvent(tagEl, 'mouseup')
+		// ).debounceTime(100);
+		// this.clickTagListenerSub = this.clickTagListener
+		// .subscribe(
+		// 	e => {
+		// 		this.socketioService.emit('progress label click toggle', null);
+		// 	}
+		// );
+		//
+		// this.socketioConnection = this.socketioService.listen('progress label spin').subscribe(
+		// 	pressed => {
+		// 		console.log('toggled');
+		// 		pressed ? tagEl.classList.add('rotate') : tagEl.classList.remove('rotate');
+		// 	}
+		// );
 	}
 
 	ngOnDestroy() {

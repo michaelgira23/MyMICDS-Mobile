@@ -1,16 +1,10 @@
 <div class="today">
-	<div class="date">
-		<h1 class="date-full">{{ today | date:'EEEE, MMMM d, y' }}</h1>
-		<h3 class="date-numbered">{{ today | date:'dd.MM.yyyy' }}</h3>
-	</div>
-	<div class="day">
-		<h1 class="time">{{ today | date:'h:mm:ss' }}</h1>
-		<h3 class="day-rotation">{{ schedule?.day | dayRotation }}</h3>
-	</div>
+	<h1 class="date">{{ today | date:'dd.MM.yyyy' }}</h1>
+	<h3 class="day-rotation">{{ schedule?.day | dayRotation }}</h3>
 </div>
 
 <div class="progress">
-	<div id="progress-day-tag" class="progress-day tag tag-primary">{{schoolPercent | schoolPercentage}}</div>
+	<button ion-button round id="progress-day-tag" class="progress-day">{{schoolPercent | schoolPercentage}}</button>
 	<div class="progress-circular">
 		<canvas class="progress-chart"></canvas>
 		<div *ngIf="0 < schoolPercent && schoolPercent < 100" class="progress-percentage">
